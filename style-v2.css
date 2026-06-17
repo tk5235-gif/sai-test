@@ -1244,3 +1244,9 @@ html, body {
   .footer-links { flex-wrap: wrap !important; gap: 0.8rem !important; }
   .copyright { font-size: 0.75rem !important; }
 }
+
+
+/* サービス画像の黒背景を透過（mix-blend-mode） */
+.service-img-wrap img {
+  mix-blend-mode: multiply;
+}
