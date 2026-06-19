@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社SAI | 時代の先を読む戦略で、価値を創造する。</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style-v2.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <img src="./logo-text.png" alt="SAI" class="logo-text-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#service"><span class="nav-en">SERVICE</span><span class="nav-ja">事業内容</span></a></li>
+                <li><a href="#strength"><span class="nav-en">STRENGTH</span><span class="nav-ja">強み</span></a></li>
+                <li><a href="#vision"><span class="nav-en">VISION</span><span class="nav-ja">ビジョン</span></a></li>
+                <li><a href="#environment"><span class="nav-en">ENV</span><span class="nav-ja">働く環境</span></a></li>
+                <li><a href="#members"><span class="nav-en">MEMBERS</span><span class="nav-ja">メンバー</span></a></li>
+                <li><a href="#day-flow"><span class="nav-en">FLOW</span><span class="nav-ja">1日の流れ</span></a></li>
+                <li><a href="#career"><span class="nav-en">CAREER</span><span class="nav-ja">キャリア</span></a></li>
+                <li><a href="#message"><span class="nav-en">MESSAGE</span><span class="nav-ja">メッセージ</span></a></li>
+                <li><a href="#company"><span class="nav-en">COMPANY</span><span class="nav-ja">会社概要</span></a></li>
+                <li><a href="#recruit" class="nav-btn-highlight"><span class="nav-en">RECRUIT</span><span class="nav-ja">採用情報</span></a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#service" class="mobile-menu-link"><span class="nav-en">SERVICE</span><span class="nav-ja">事業内容</span></a></li>
+            <li><a href="#strength" class="mobile-menu-link"><span class="nav-en">STRENGTH</span><span class="nav-ja">強み</span></a></li>
+            <li><a href="#vision" class="mobile-menu-link"><span class="nav-en">VISION</span><span class="nav-ja">ビジョン</span></a></li>
+            <li><a href="#environment" class="mobile-menu-link"><span class="nav-en">ENV</span><span class="nav-ja">働く環境</span></a></li>
+            <li><a href="#members" class="mobile-menu-link"><span class="nav-en">MEMBERS</span><span class="nav-ja">メンバー</span></a></li>
+            <li><a href="#day-flow" class="mobile-menu-link"><span class="nav-en">FLOW</span><span class="nav-ja">1日の流れ</span></a></li>
+            <li><a href="#career" class="mobile-menu-link"><span class="nav-en">CAREER</span><span class="nav-ja">キャリア</span></a></li>
+            <li><a href="#message" class="mobile-menu-link"><span class="nav-en">MESSAGE</span><span class="nav-ja">メッセージ</span></a></li>
+            <li><a href="#company" class="mobile-menu-link"><span class="nav-en">COMPANY</span><span class="nav-ja">会社概要</span></a></li>
+            <li><a href="#recruit" class="mobile-menu-link nav-btn-highlight"><span class="nav-en">RECRUIT</span><span class="nav-ja">採用情報</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- ① Hero Section (ファーストビュー) -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-sai-words">
+                <div class="sai-word speed"><span class="first-letter">S</span>peed</div>
+                <div class="sai-word action"><span class="first-letter">A</span>ction</div>
+                <div class="sai-word innovation"><span class="first-letter">I</span>nnovation</div>
+            </div>
+            <h1 class="hero-ja">時代の先を読む戦略で、<br>価値を創造する。</h1>
+            <div class="hero-actions">
+                <a href="#service" class="btn btn-primary">OUR SERVICE</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- ② Service Section (事業内容) -->
+    <section class="service" id="service">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">SERVICE</span>
+                <h2 class="ja-title">事業内容</h2>
+            </div>
+            
+            <div class="service-zigzag">
+                <!-- Service 1 -->
+                <div class="service-row">
+                    <div class="service-image-placeholder js-fade-left">
+                        <img src="service1.png" alt="Marketing Illustration" class="service-img">
+                        <div class="cyber-overlay"></div>
+                        <span class="service-num">01</span>
+                    </div>
+                    <div class="service-text js-fade-right">
+                        <h3 class="service-en">MARKETING</h3>
+                        <h4 class="service-ja">マーケティング</h4>
+                        <p>サービスや商品が売れる仕組みを独自のノウハウで構築していきます。<br>SAIでは顧客の悩みを汲み、市場のニーズとマッチしたコンテンツ提供を心がけています。</p>
+                        <ul class="service-features">
+                            <li>市場調査・データ分析</li>
+                            <li>戦略立案・ロードマップ策定</li>
+                            <li>コンテンツマーケティング</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-row reverse">
+                    <div class="service-image-placeholder js-fade-right">
+                        <img src="service2.png" alt="Advertising Illustration" class="service-img">
+                        <div class="cyber-overlay"></div>
+                        <span class="service-num">02</span>
+                    </div>
+                    <div class="service-text js-fade-left">
+                        <h3 class="service-en">ADVERTISING</h3>
+                        <h4 class="service-ja">広告運用</h4>
+                        <p>SAIでの広告運用はマーケティング全般を指します。<br>商品にもっとも魅力を感じるターゲット層を絞り、広告を掲載します。また、掲載した広告への反応をみながらスピーディーに改善を繰り返していきます。</p>
+                        <ul class="service-features">
+                            <li>リスティング・SNS広告運用</li>
+                            <li>クリエイティブABテスト</li>
+                            <li>ROI・CPA最適化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-row">
+                    <div class="service-image-placeholder js-fade-left">
+                        <img src="service3.png" alt="Customer Support Illustration" class="service-img">
+                        <div class="cyber-overlay"></div>
+                        <span class="service-num">03</span>
+                    </div>
+                    <div class="service-text js-fade-right">
+                        <h3 class="service-en">CUSTOMER SUPPORT</h3>
+                        <h4 class="service-ja">カスタマーサポート</h4>
+                        <p>顧客とのコミュニケーションの数を最適化しています。<br>感情とレスポンスの早さを両立し、一人ひとりにファンがつくカスタマー育成を目指しています。</p>
+                        <ul class="service-features">
+                            <li>顧客満足度（CS）向上施策</li>
+                            <li>CRMツールの導入・運用支援</li>
+                            <li>ロイヤルティプログラム構築</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-row reverse">
+                    <div class="service-image-placeholder js-fade-right">
+                        <img src="service4.png" alt="Digital Education" class="service-img">
+                        <div class="cyber-overlay"></div>
+                        <span class="service-num">04</span>
+                    </div>
+                    <div class="service-text js-fade-left">
+                        <h3 class="service-en">DIGITAL EDUCATION</h3>
+                        <h4 class="service-ja">デジタル教育コンテンツ事業</h4>
+                        <p>eラーニング教材およびオンラインスクールの企画・開発・運営を行っています。<br>実践的な知識とスキルを体系化し、学習体験として提供します。</p>
+                        <ul class="service-features">
+                            <li>eラーニング教材の企画・制作</li>
+                            <li>オンラインスクールの運営</li>
+                            <li>教育コンテンツの設計・改善</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-row">
+                    <div class="service-image-placeholder js-fade-left">
+                        <img src="service5.png" alt="Creative Production" class="service-img">
+                        <div class="cyber-overlay"></div>
+                        <span class="service-num">05</span>
+                    </div>
+                    <div class="service-text js-fade-right">
+                        <h3 class="service-en">CREATIVE PRODUCTION</h3>
+                        <h4 class="service-ja">クリエイティブ制作</h4>
+                        <p>ユーザーの行動を促すためのコンテンツ制作を行います。<br>企画から制作まで一貫して対応し、成果に直結するクリエイティブを提供します。</p>
+                        <ul class="service-features">
+                            <li>広告クリエイティブ制作（バナー／動画）</li>
+                            <li>LP／Webコンテンツ制作</li>
+                            <li>ブランド設計／トーン設計</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ Strength Section (強み・選ばれる理由) -->
+    <section class="strength" id="strength">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">STRENGTH</span>
+                <h2 class="ja-title">強み・選ばれる理由</h2>
+            </div>
+            <div class="strength-grid">
+                <!-- Strength Item 1 -->
+                <div class="glass-card strength-card js-fade-up">
+                    <div class="strength-num">01</div>
+                    <h3 class="strength-title">独自のノウハウと高度なデータ分析</h3>
+                    <p class="strength-desc">
+                        <span class="strength-line">感覚に頼らない徹底的な市場調査と</span>
+                        <span class="strength-line">データ分析を行い、成果に直結する戦略を構築します。</span>
+                    </p>
+                </div>
+                <!-- Strength Item 2 -->
+                <div class="glass-card strength-card js-fade-up">
+                    <div class="strength-num">02</div>
+                    <h3 class="strength-title">迅速なアジャイル実行と改善力</h3>
+                    <p class="strength-desc">
+                        <span class="strength-line">市場の変化をいち早く捉え、ハイスピードで仮説検証と</span>
+                        <span class="strength-line">改善サイクルを回し続けます。</span>
+                    </p>
+                </div>
+                <!-- Strength Item 3 -->
+                <div class="glass-card strength-card js-fade-up">
+                    <div class="strength-num">03</div>
+                    <h3 class="strength-title">顧客と併走する確かな成功支援</h3>
+                    <p class="strength-desc">
+                        <span class="strength-line">課題解決から売上の最大化まで、</span>
+                        <span class="strength-line">常にパートナーとして寄り添い、確実な価値を提供します。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ Vision Section (ビジョン) -->
+    <section class="vision" id="vision">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">VISION</span>
+                <h2 class="ja-title">ビジョン</h2>
+            </div>
+            
+            <div class="vision-content">
+                <div class="vision-main js-fade-up">
+                    <h3>時代のニーズにあわせて「インターネットの活用×マーケティング」によってビジネスを構築し、収益性の高いビジネスを通して社会貢献をしてまいります。</h3>
+                </div>
+                <div class="vision-sub js-fade-up">
+                    <div class="value-prop">
+                        <h4>01. Professionalism</h4>
+                        <p>高度な専門知識とデータ分析に基づき、勘に頼らない論理的なマーケティング戦略を構築します。</p>
+                    </div>
+                    <div class="value-prop">
+                        <h4>02. Client Success</h4>
+                        <p>顧客の課題を自社の課題として捉え、共に成長し、確実な利益をもたらすパートナーとして伴走します。</p>
+                    </div>
+                    <div class="value-prop">
+                        <h4>03. Speed & Agile</h4>
+                        <p>市場の変化をいち早く察知し、最適解を最速で実行・改善するアジャイルな組織体制を敷いています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ Environment Section (働く環境) -->
+    <section class="environment" id="environment">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">ENVIRONMENT</span>
+                <h2 class="ja-title">働く環境</h2>
+            </div>
+            <div class="env-grid">
+                <!-- Env 1 -->
+                <div class="glass-card env-card js-fade-up">
+                    <div class="env-icon">🌈</div>
+                    <h3 class="env-title">個性を尊重した働き方</h3>
+                    <p class="env-desc">髪型・髪色や服装など個人のスタイルを尊重し、自分らしく最大のパフォーマンスを発揮できる環境を整えています。</p>
+                </div>
+                <!-- Env 2 -->
+                <div class="glass-card env-card js-fade-up">
+                    <div class="env-icon">📈</div>
+                    <h3 class="env-title">成長とスキルアップ支援</h3>
+                    <p class="env-desc">自己研鑽のための書籍購入支援やセミナー参加費用など、社員の学びを全面的にサポートします。</p>
+                </div>
+                <!-- Env 3 -->
+                <div class="glass-card env-card js-fade-up">
+                    <div class="env-icon">🤝</div>
+                    <h3 class="env-title">オープンな社内カルチャー</h3>
+                    <p class="env-desc">年齢や役職に関わらず、誰もが自由にアイディアを出し合い、フラットに議論できる環境です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ Members Section (メンバー紹介) -->
+    <section class="members" id="members">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">MEMBERS</span>
+                <h2 class="ja-title">メンバー紹介</h2>
+            </div>
+            <div class="members-grid">
+                <!-- Member 1: 藤平勇太 -->
+                <div class="member-card js-fade-up">
+                    <div class="member-circle">
+                        <img src="member1.jpg" alt="藤平勇太" class="member-photo">
+                    </div>
+                    <h3 class="member-name"><span class="member-title">Manager</span>　藤平 勇太</h3>
+                    <div class="member-divider"></div>
+                    <div class="member-detail">
+                        <p><span class="detail-label">担当業務：</span>広告戦略立案・予算管理</p>
+                        <p><span class="detail-label">仕事の魅力：</span>逆境に立ち向かう力と、それに打ち勝ったときの達成感です。広告は必ずしも計画通りには進みません。計画をベースに予算を調整しますが、外的要因も重なり往々にして数値が前後します。要因を分析し軌道に乗せ直して目標値を達成できたときには、自信に繋がります。</p>
+                    </div>
+                </div>
+                <!-- Member 2: 藤平誠太 -->
+                <div class="member-card js-fade-up">
+                    <div class="member-circle">
+                        <img src="member2.jpg" alt="真辺匠" class="member-photo">
+                    </div>
+                    <h3 class="member-name"><span class="member-title">Manager</span>　真辺 匠</h3>
+                    <div class="member-divider"></div>
+                    <div class="member-detail">
+                        <p><span class="detail-label">担当業務：</span>事業開発担当</p>
+                        <p><span class="detail-label">仕事の魅力：</span>弊社では良い意味で行ってはダメな事などは有りません。各々の判断で最善の選択をしプロジェクトを成功させるべく行動できます。裁量、責任をもってお仕事できますし、己の判断でプロジェクトを成功させた時は何よりも達成感があります。</p>
+                    </div>
+                </div>
+                <!-- Member 3: 青木友也 -->
+                <div class="member-card js-fade-up">
+                    <div class="member-circle">
+                        <img src="member3.jpg" alt="青木友也" class="member-photo">
+                    </div>
+                    <h3 class="member-name"><span class="member-title">Manager</span>　青木 友也</h3>
+                    <div class="member-divider"></div>
+                    <div class="member-detail">
+                        <p><span class="detail-label">担当業務：</span>提携代理店開拓及び管理</p>
+                        <p><span class="detail-label">仕事の魅力：</span>私は、自分で目標設定を行った数値を実現させる過程にやりがいを感じるタイプです。そのため自発的に動くことを心がけています。10回チャレンジし仮に結果に繋がったのが1回だとしても、やりきったという大きな達成感を感じることが出来るからです。ある程度の裁量を任せて頂けるSAIの働き方は非常に魅力的に思います。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑦ Day Flow Section (1日の流れ) -->
+    <section class="day-flow" id="day-flow">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">DAY FLOW</span>
+                <h2 class="ja-title">1日の流れ</h2>
+            </div>
+            <div class="timeline">
+                <!-- Timeline Step 1 -->
+                <div class="timeline-item js-fade-up">
+                    <div class="timeline-time">10:00</div>
+                    <div class="glass-card timeline-content">
+                        <h3 class="timeline-title">出社・ミーティング</h3>
+                        <p class="timeline-desc">その日のタスク確認や、チーム全体での進捗ミーティングを行い情報共有します。</p>
+                    </div>
+                </div>
+                <!-- Timeline Step 2 -->
+                <div class="timeline-item js-fade-up">
+                    <div class="timeline-time">12:00</div>
+                    <div class="glass-card timeline-content">
+                        <h3 class="timeline-title">コア業務（午前）</h3>
+                        <p class="timeline-desc">マーケティングプランの設計や、進行中のプロジェクトのデータ分析・広告運用を行います。</p>
+                    </div>
+                </div>
+                <!-- Timeline Step 3 -->
+                <div class="timeline-item js-fade-up">
+                    <div class="timeline-time">13:00</div>
+                    <div class="glass-card timeline-content">
+                        <h3 class="timeline-title">ランチ休憩</h3>
+                        <p class="timeline-desc">渋谷周辺のカフェやオフィス内で、メンバー同士が自由にランチを取ります。</p>
+                    </div>
+                </div>
+                <!-- Timeline Step 4 -->
+                <div class="timeline-item js-fade-up">
+                    <div class="timeline-time">14:00</div>
+                    <div class="glass-card timeline-content">
+                        <h3 class="timeline-title">コア業務・ミーティング（午後）</h3>
+                        <p class="timeline-desc">パートナー企業様との打合せや、新規クリエイティブの制作・レビューを進めます。</p>
+                    </div>
+                </div>
+                <!-- Timeline Step 5 -->
+                <div class="timeline-item js-fade-up">
+                    <div class="timeline-time">19:00</div>
+                    <div class="glass-card timeline-content">
+                        <h3 class="timeline-title">業務終了・退社</h3>
+                        <p class="timeline-desc">明日の予定を整理して業務終了。残業は少なく、ライフワークバランスを大切にしています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑧ Career Section (キャリア) -->
+    <section class="career" id="career">
+        <div class="container">
+            <div class="career-path-section">
+                <div class="section-header text-center js-fade-up">
+                    <span class="en-title">CAREER PATH</span>
+                    <h2 class="ja-title">目指せるキャリア</h2>
+                </div>
+                <p class="text-center" style="color: var(--text-muted); margin-bottom: 4rem; line-height: 1.8;">
+                    当社では、成果を出した従業員は年齢や勤続年数に関係なく正当に評価される仕組みを採用しています。<br>
+                    常に前向きに努力を続ける人が報われる環境を整え、社員一人ひとりがやりがいを持って働ける体制を構築しています。
+                </p>
+                <div class="career-diagram">
+                    <!-- Step 1 -->
+                    <div class="career-col js-fade-up">
+                        <div class="career-quote-card">
+                            <h4 class="quote-title">スタッフ</h4>
+                            <p class="quote-desc">研修やOJTで<br>基本業務を身に付ける</p>
+                        </div>
+                        <div class="career-stair-wrapper">
+                            <div class="stair-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+                            </div>
+                            <div class="career-stair stair-1">
+                                <div class="stair-salary">年収: 378万円～</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="career-col js-fade-up">
+                        <div class="career-quote-card">
+                            <h4 class="quote-title">リーダー</h4>
+                            <p class="quote-desc">研修やOJTで<br>リーダー業務を身に付ける</p>
+                        </div>
+                        <div class="career-stair-wrapper">
+                            <div class="stair-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+                            </div>
+                            <div class="career-stair stair-2">
+                                <div class="stair-salary">年収: 442万円～</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="career-col js-fade-up">
+                        <div class="career-quote-card">
+                            <h4 class="quote-title">マネージャー</h4>
+                            <p class="quote-desc">マネージャーとして<br>チームの運営を行う</p>
+                        </div>
+                        <div class="career-stair-wrapper">
+                            <div class="stair-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+                            </div>
+                            <div class="career-stair stair-3">
+                                <div class="stair-salary">年収: 604万円～</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="career-col js-fade-up">
+                        <div class="career-quote-card">
+                            <h4 class="quote-title">エグゼクティブ</h4>
+                            <p class="quote-desc">会社の経営に参画し<br>会社の方針を決める</p>
+                        </div>
+                        <div class="career-stair-wrapper">
+                            <div class="stair-icon" style="display: flex;">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width:30px;"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+                                <svg viewBox="0 0 24 24" fill="#ff2a2a" style="width:20px; margin-left:-10px; margin-top:-10px;"><path d="M14.4 6L14 4H5V21H7V14H12.6L13 16H20V6H14.4Z"/></svg>
+                            </div>
+                            <div class="career-stair stair-4">
+                                <div class="stair-salary">年収: 850万円～</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-mobile-cards">
+                    <div class="career-mobile-card">
+                        <div class="career-mobile-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+                        <div class="career-mobile-body">
+                            <div class="career-mobile-step">STEP 01</div>
+                            <div class="career-mobile-title">スタッフ</div>
+                            <div class="career-mobile-salary">年収：378万円〜</div>
+                            <div class="career-mobile-desc">研修やOJTを通じて業務に必要な基礎知識やツールの使い方を身に付けます。まずは目の前の業務を着実にこなす能力を養います。</div>
+                        </div>
+                    </div>
+                    <div class="career-mobile-card">
+                        <div class="career-mobile-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+                        <div class="career-mobile-body">
+                            <div class="career-mobile-step">STEP 02</div>
+                            <div class="career-mobile-title">リーダー</div>
+                            <div class="career-mobile-salary">年収：442万円〜</div>
+                            <div class="career-mobile-desc">後輩の指導やサポート、プロジェクト管理を担い、マネジメントに必要なスキルを養います。</div>
+                        </div>
+                    </div>
+                    <div class="career-mobile-card">
+                        <div class="career-mobile-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+                        <div class="career-mobile-body">
+                            <div class="career-mobile-step">STEP 03</div>
+                            <div class="career-mobile-title">マネージャー</div>
+                            <div class="career-mobile-salary">年収：604万円〜</div>
+                            <div class="career-mobile-desc">プロジェクト全体の進行管理、チームメンバーを束ねる役割を担う高度なマネジメントポジションです。</div>
+                        </div>
+                    </div>
+                    <div class="career-mobile-card">
+                        <div class="career-mobile-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+                        <div class="career-mobile-body">
+                            <div class="career-mobile-step">STEP 04</div>
+                            <div class="career-mobile-title">エグゼクティブ</div>
+                            <div class="career-mobile-salary">年収：850万円〜</div>
+                            <div class="career-mobile-desc">複数チームを統括し、会社全体の中長期的な戦略を策定・推進する最重要ポジションです。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-details">
+                    <div class="detail-box js-fade-up">
+                        <div class="detail-level">STEP 01</div>
+                        <h4 class="detail-title">スタッフ</h4>
+                        <p class="detail-text">入社後は、研修や先輩社員とのOJTを通じて、業務に必要な基礎知識やツールの使い方などを身に付けていきます。<br>まずは目の前の業務を着実にこなす能力を養い、成果を出せるベースを構築します。</p>
+                    </div>
+                    <div class="detail-box js-fade-up">
+                        <div class="detail-level">STEP 02</div>
+                        <h4 class="detail-title">リーダー</h4>
+                        <p class="detail-text">スタッフ業務を身に付け、安定した成果を出せるようになったらリーダーへと昇進します。<br>自身の業務だけでなく、後輩の指導やサポート、プロジェクト管理などを段階的に担うことで、マネジメントに必要なスキルを養います。</p>
+                    </div>
+                    <div class="detail-box js-fade-up">
+                        <div class="detail-level">STEP 03</div>
+                        <h4 class="detail-title">マネージャー</h4>
+                        <p class="detail-text">プロジェクト全体の進行管理、数人のチームメンバーを束ねる役割を担うマネージャーとして活躍します。<br>プロジェクトのKPI（成果指標）の達成に向けて、メンバーの育成や進捗管理など、より高度なマネジメントスキルが求められるポジションです。</p>
+                    </div>
+                    <div class="detail-box js-fade-up">
+                        <div class="detail-level">STEP 04</div>
+                        <h4 class="detail-title">エグゼクティブ（経営幹部）</h4>
+                        <p class="detail-text">マネージャー経験後、特定の事業を統括する事業部長、もしくは全社の経営に携わるエグゼクティブとして活躍します。<br>単一のプロジェクトに留まらず、複数のチームを統括し、サービスの品質管理や高度な数値管理を通じて事業全体の成果を最大化します。<br><br>また、会社全体の中長期的な戦略（人材戦略、マーケティング戦略、財務計画など）を策定し、組織の運営方針を推進します。現場の声を反映しながら、会社全体の飛躍を見据えた大局的な視点での経営判断が求められる、最もやりがいのある重要なポジションです。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑨ Message Section (代表メッセージ) -->
+    <section class="message" id="message">
+        <div class="container">
+            <div class="section-header text-center js-fade-up">
+                <span class="en-title">MESSAGE</span>
+                <h2 class="ja-title">代表メッセージ</h2>
+            </div>
+            <div class="message-layout js-fade-up">
+                <div class="message-photo">
+                    <img src="ceo.jpg" alt="代表取締役 月坂 浄">
+                </div>
+                <div class="message-content">
+                    <h3 class="message-catch">「挑戦し続け、新たな価値を創造する。」</h3>
+                    <p class="message-body">
+                        私たち株式会社SAIは、常に新しい価値を追求し、お客様に感動を届けるサービスを提供することで、社会に貢献することを使命としています。これまで数々の挑戦に取り組み、そのたびにお客様やパートナーの皆さまからの信頼とご支援をいただきながら、着実に成長を遂げてまいりました。
+                    </p>
+                    <p class="message-body">
+                        この成長は、私たちが掲げる「挑戦」と「革新」の精神によって支えられてきたものだと確信しています。
+                    </p>
+                    <p class="message-body">
+                        今後も変化の激しい時代の中で、私たちはその一歩先を見据え、お客様の期待を超える価値を創出し続ける企業でありたいと考えています。
+                    </p>
+                    <div class="message-signature">
+                        <p class="role">代表取締役</p>
+                        <p class="name">月坂 浄</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑩ Company Section (会社概要) -->
+    <section class="company" id="company">
+        <div class="container">
+            <div class="section-header js-fade-up">
+                <span class="en-title">COMPANY</span>
+                <h2 class="ja-title">会社概要</h2>
+            </div>
+            <div class="glass-card company-card js-fade-up">
+                <table class="company-table">
+                    <tbody>
+                        <tr><th>会社名</th><td>株式会社SAI</td></tr>
+                        <tr><th>代表者名</th><td>月坂 浄</td></tr>
+                        <tr><th>設立</th><td>2015年4月15日</td></tr>
+                        <tr><th>資本金</th><td>1,000万円</td></tr>
+                        <tr><th>事業内容</th><td>
+                            ・イーラーニング教材・オンラインスクールの企画<br>
+                            ・ネットマーケティング戦略の立案<br>
+                            ・クリエイティブ制作<br>
+                            ・広告代理業<br>
+                            ・カスタマーサービス
+                        </td></tr>
+                        <tr><th>取引先企業</th><td>
+                            ・ソネット・メディア・トレーディング株式会社<br>
+                            ・株式会社サイバーエージェント<br>
+                            ・株式会社Gunosy<br>
+                            ・LINEヤフー株式会社<br>
+                            ・Facebook Japan株式会社<br>
+                            ・Google合同会社
+                        </td></tr>
+                        <tr><th>所在地</th><td>150-0044 東京都渋谷区円山町5-5 橋本ビル5F</td></tr>
+                        <tr><th>従業員数</th><td>30人（2026年6月1日時点）<br><span style="font-size: 0.8em; color: var(--text-muted);">※アルバイト・業務委託含む</span></td></tr>
+                        <tr><th>メールアドレス</th><td>info@saigroupe.com</td></tr>
+                        <tr><th>電話番号</th><td>03-6739-3003</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑪ Recruit CTA Section (採用情報) -->
+    <section class="recruit-cta" id="recruit">
+        <div class="container">
+            <div class="recruit-glow-box js-fade-up">
+                <div class="section-header text-center js-fade-up">
+                    <span class="en-title" style="color: var(--neon-blue);">RECRUIT</span>
+                    <h2 class="ja-title">採用情報</h2>
+                </div>
+                <p class="recruit-desc">SAIで共に未来を創りませんか？<br>あなたの才能と情熱が、次の革新を生み出します。</p>
+                <a href="https://sairecruit.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-cyber">
+                    <span class="btn-cyber-text">VIEW RECRUIT SITE</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <div class="news-center-block js-fade-up">
+        <h3 class="news-center-title">NEWS</h3>
+        <div class="news-center-content">
+            <span class="news-center-date">2026.04.15</span>
+            <span class="news-center-tag">お知らせ</span>
+            <p class="news-center-text">コーポレートサイトリニューアルしました。</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="footer-logo">
+                    <img src="./logo-text.png" alt="SAI" class="logo-text-img">
+                </a>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p class="copyright">&copy; 2026 株式会社SAI All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script-v2.js"></script>
+</body>
+</html>
