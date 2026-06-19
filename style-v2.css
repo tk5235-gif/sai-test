@@ -1247,38 +1247,83 @@ html, body {
 
 
 
+
+
+
 /* ============================================================
-   メンバー写真（バストアップ・実写対応）
+   メンバー紹介（円形写真・3カラム）
    ============================================================ */
-.member-img-wrap {
-    width: 100%;
-    max-width: 260px;
-    aspect-ratio: 3 / 4;
-    border-radius: 12px;
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+.member-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.member-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-.member-photo {
+.member-circle .member-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
     display: block;
 }
-
-/* コメントが長いので左寄せで読みやすく */
-.member-card .member-comment {
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+.member-name .member-title {
+    color: var(--neon-blue);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.member-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.12);
+    margin-bottom: 1.2rem;
+}
+.member-detail {
     text-align: left;
+    width: 100%;
+}
+.member-detail p {
     font-size: 0.85rem;
-    line-height: 1.7;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+.member-detail .detail-label {
+    font-weight: 700;
+    color: var(--text-main);
 }
 
-/* メンバーカードを上揃えに（コメント量が違うため） */
-.members-grid {
-    align-items: stretch;
+/* タブレット（2カラム） */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
-.member-card {
-    justify-content: flex-start;
+
+/* スマホ（1カラム） */
+@media (max-width: 767px) {
+    .members-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    .member-circle { width: 200px !important; height: 200px !important; }
+    .member-detail { max-width: 400px; margin: 0 auto; }
 }
