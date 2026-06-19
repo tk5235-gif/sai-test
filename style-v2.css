@@ -1246,7 +1246,39 @@ html, body {
 }
 
 
-/* サービス画像の黒背景を透過（mix-blend-mode） */
-.service-img-wrap img {
-  mix-blend-mode: multiply;
+
+/* ============================================================
+   メンバー写真（バストアップ・実写対応）
+   ============================================================ */
+.member-img-wrap {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* コメントが長いので左寄せで読みやすく */
+.member-card .member-comment {
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* メンバーカードを上揃えに（コメント量が違うため） */
+.members-grid {
+    align-items: stretch;
+}
+.member-card {
+    justify-content: flex-start;
 }
