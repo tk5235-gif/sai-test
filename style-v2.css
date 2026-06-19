@@ -9,7 +9,8 @@
 	--fig: "Figtree", "Inter", sans-serif;
 	--min: serif;
 	--gothic: "Zen Kaku Gothic Antique", "Noto Sans JP", sans-serif;
-	--black: #FAFAFA;         /* ディープブラック背景 */
+	--black: #FAFAFA;         /* 背景：薄グレー */
+	--ink: #1A1A1A;           /* 本文テキスト：濃い黒 */
 	--blue: #192F61;          /* オリックスブルー */
 	--dark-blue: #FFFFFF;     /* ネイビーブルー */
 	--red: #D30037;           /* オリックスレッド */
@@ -220,9 +221,9 @@ iframe {
 = Base Layout
 ----------------------------------------------- */
 body {
-	color: var(--black);
+	color: var(--ink);
 	font-family: var(--gothic);
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: .04em;
 	background-color: var(--black);
 }
@@ -1598,3 +1599,21 @@ body.is-editing-mode * {
 		padding-top: 30px;
 	}
 }
+
+/* ============================================================
+   フォント視認性強化（白背景で濃く・しっかり表示）
+   ============================================================ */
+body { color: #1A1A1A !important; font-weight: 500; }
+p, li, dd, dt, span, td, th, a { color: #1A1A1A; }
+.text, .copy, p.text {
+    color: #333 !important;
+    font-weight: 500 !important;
+    line-height: 1.9 !important;
+}
+h1, h2, h3, h4, .title, .name { color: #192F61 !important; font-weight: 700 !important; }
+.en, [data-text] { color: #192F61 !important; }
+.section .text, .intro .text, .job .text, .people .text {
+    color: #333 !important;
+}
+/* 薄いグレー文字を一掃 */
+.copyright, .scroll, .slide-text { color: #555 !important; }
