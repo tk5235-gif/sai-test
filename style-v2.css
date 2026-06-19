@@ -1601,19 +1601,143 @@ body.is-editing-mode * {
 }
 
 /* ============================================================
-   フォント視認性強化（白背景で濃く・しっかり表示）
+   文字色の明暗ルール（根本定義）
+   原則：明るい背景＝暗い文字／暗い背景＝明るい文字
+   ============================================================
+   このサイトの背景:
+     --black (#FAFAFA 明るいグレー) ... 明るい背景
+     #fff / #f5f7fa             ... 明るい背景
+     --blue (#192F61 紺)         ... 暗い背景
+     --grad-orix (紺→赤グラデ)    ... 暗い背景
    ============================================================ */
-body { color: #1A1A1A !important; font-weight: 500; }
-p, li, dd, dt, span, td, th, a { color: #1A1A1A; }
-.text, .copy, p.text {
-    color: #333 !important;
+
+/* ---- ベース：明るい背景に暗い文字（デフォルト） ---- */
+body {
+    color: #1A1A1A !important;
+    font-weight: 500;
+}
+p, li, dd, dt, td, th, figcaption, .text, .copy, .division, .name {
+    color: #1A1A1A;
+}
+.text, p.text {
+    color: #333333 !important;
     font-weight: 500 !important;
     line-height: 1.9 !important;
 }
-h1, h2, h3, h4, .title, .name { color: #192F61 !important; font-weight: 700 !important; }
-.en, [data-text] { color: #192F61 !important; }
-.section .text, .intro .text, .job .text, .people .text {
-    color: #333 !important;
+h1, h2, h3, h4, .title { color: #192F61; font-weight: 700; }
+.en, [data-text] { color: #192F61; }
+
+/* ---- 暗い背景セクション内は明るい文字 ---- */
+/* 紺背景・グラデ背景を持つ要素とその子孫 */
+[style*="--blue"], [style*="--grad"],
+.kv, .kv *,
+.section.job, .section.job .title, .section.job .copy,
+.people-focus, .people-focus *,
+.info-entry, .info-entry *,
+.footer, .footer * {
+    color: #FFFFFF;
 }
-/* 薄いグレー文字を一掃 */
-.copyright, .scroll, .slide-text { color: #555 !important; }
+
+/* 暗背景の見出し・強調も白に */
+.kv .copy, .kv .copy-char, .kv .name,
+.footer .name, .footer p, .footer a, .footer li {
+    color: #FFFFFF !important;
+}
+
+/* 紺背景ボタン内テキスト */
+.btn-entry, .btn-entry *, [class*="entry"] a { color: #FFFFFF; }
+
+/* ---- 白背景セクションは明示的に暗い文字 ---- */
+.section.intro, .section.intro *,
+.section.people .swiper-slide,
+.section.people .division,
+.section.people .name,
+.section.environment, .section.environment *,
+.info, .info * {
+    color: #1A1A1A;
+}
+.section.intro .text, .section.people .text,
+.section.environment .text {
+    color: #333333 !important;
+}
+
+/* 紺背景に乗る見出しは白を維持（上書き防止） */
+.section.job > .title, .section.job > .head .title { color: #FFFFFF !important; }
+
+/* リンクのデフォルト（明背景） */
+a { color: #192F61; }
+.footer a, .kv a { color: #FFFFFF; }
+
+/* 補助テキスト（薄くてOKな要素のみ） */
+.scroll { color: #888 !important; }
+.copyright { color: #FFFFFF !important; opacity: 0.85; }
+
+/* ============================================================
+   背景の明暗に応じた文字色定義（コントラスト保証）
+   明るい背景 → 暗い文字 ／ 暗い背景 → 明るい文字
+   ============================================================ */
+
+/* --- ① 明るい背景（白・薄グレー）には暗い文字 --- */
+body,
+.section,
+.intro,
+.job,
+.people,
+.environment,
+.info,
+.main {
+    background-color: #FAFAFA;
+    color: #1A1A1A;
+}
+.section p, .section li, .section dd, .section span,
+.intro p, .job p, .people p, .environment p, .info p,
+.text, p.text, .copy {
+    color: #333333 !important;
+}
+.section h1, .section h2, .section h3, .section h4,
+.title, .name, .en, [data-text],
+.intro h2, .intro h3, .job h2, .people h2, .environment h2, .info h2 {
+    color: #192F61 !important;
+}
+
+/* --- ② 暗い背景（紺・赤グラデ）には明るい文字 --- */
+[style*="background: var(--blue)"],
+[style*="background:#192F61"],
+.bg-navy, .bg-dark,
+.kv .set,
+.swiper-slide[style*="#192F61"] {
+    color: #FFFFFF !important;
+}
+.bg-navy *, .bg-dark * {
+    color: #FFFFFF !important;
+}
+
+/* --- ③ グラデーション背景（紺→赤）には白文字 --- */
+[style*="linear-gradient"][style*="#192F61"],
+.grad-bg, .recruit-cta {
+    color: #FFFFFF !important;
+}
+.grad-bg *, .recruit-cta * {
+    color: #FFFFFF !important;
+}
+
+/* --- ④ KV（キービジュアル）のコピーは紺で視認性確保 --- */
+.kv .copy, .copy-char {
+    color: #192F61 !important;
+    font-weight: 700 !important;
+}
+
+/* --- ⑤ ナビゲーション（白背景）は紺文字 --- */
+.nav-global a, .nav-global span,
+.header .site-name {
+    color: #192F61 !important;
+}
+
+/* --- ⑥ フッター（暗い背景想定）は白文字 --- */
+.footer, footer {
+    background-color: #192F61 !important;
+    color: #FFFFFF !important;
+}
+.footer *, footer * {
+    color: #FFFFFF !important;
+}
