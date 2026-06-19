@@ -9,10 +9,10 @@
 	--fig: "Figtree", "Inter", sans-serif;
 	--min: serif;
 	--gothic: "Zen Kaku Gothic Antique", "Noto Sans JP", sans-serif;
-	--black: #FAFAFA;         /* 背景：薄グレー */
-	--ink: #1A1A1A;           /* 本文テキスト：濃い黒 */
+	--black: #192F61;         /* 背景：ネイビー（暗） */
+	--ink: #FFFFFF;           /* 本文テキスト：白 */
 	--blue: #192F61;          /* オリックスブルー */
-	--dark-blue: #FFFFFF;     /* ネイビーブルー */
+	--dark-blue: #0F1F45;     /* より濃い紺 */
 	--red: #D30037;           /* オリックスレッド */
 	--grad-orix: linear-gradient(90deg,#D30037,#192F61);
 	--grad-blue: linear-gradient(90deg,transparent,#192F61);
@@ -1672,70 +1672,60 @@ a { color: #192F61; }
 .scroll { color: #888 !important; }
 .copyright { color: #FFFFFF !important; opacity: 0.85; }
 
+
 /* ============================================================
-   背景の明暗に応じた文字色定義（コントラスト保証）
-   明るい背景 → 暗い文字 ／ 暗い背景 → 明るい文字
+   背景の明暗に応じた文字色定義【反転版】
+   ベース暗い背景（紺）→ 明るい文字／部分的な明るい背景 → 暗い文字
    ============================================================ */
 
-/* --- ① 明るい背景（白・薄グレー）には暗い文字 --- */
+/* --- ① ベース：暗い紺背景 + 白文字 --- */
 body,
-.section,
-.intro,
-.job,
-.people,
-.environment,
-.info,
-.main {
-    background-color: #FAFAFA;
-    color: #1A1A1A;
+.section, .intro, .job, .people, .environment, .info, .main {
+    background-color: #192F61;
+    color: #FFFFFF;
 }
 .section p, .section li, .section dd, .section span,
 .intro p, .job p, .people p, .environment p, .info p,
 .text, p.text, .copy {
-    color: #333333 !important;
+    color: #E8ECF4 !important;
 }
+
+/* --- ② 見出しは白＋赤アクセント --- */
 .section h1, .section h2, .section h3, .section h4,
-.title, .name, .en, [data-text],
+.title, .name,
 .intro h2, .intro h3, .job h2, .people h2, .environment h2, .info h2 {
-    color: #192F61 !important;
+    color: #FFFFFF !important;
+}
+.en, [data-text] {
+    color: #D30037 !important;
 }
 
-/* --- ② 暗い背景（紺・赤グラデ）には明るい文字 --- */
-[style*="background: var(--blue)"],
-[style*="background:#192F61"],
-.bg-navy, .bg-dark,
-.kv .set,
-.swiper-slide[style*="#192F61"] {
-    color: #FFFFFF !important;
+/* --- ③ 明るいカード（白背景）の中は暗い文字 --- */
+.card, .box, .panel, [style*="background:#fff"], [style*="background: #fff"],
+[style*="background-color:#fff"], [style*="background-color: #fff"],
+[style*="#f5f7fa"], [style*="#FAFAFA"] {
+    background-color: #FFFFFF !important;
+    color: #1A1A1A !important;
 }
-.bg-navy *, .bg-dark * {
-    color: #FFFFFF !important;
-}
-
-/* --- ③ グラデーション背景（紺→赤）には白文字 --- */
-[style*="linear-gradient"][style*="#192F61"],
-.grad-bg, .recruit-cta {
-    color: #FFFFFF !important;
-}
-.grad-bg *, .recruit-cta * {
-    color: #FFFFFF !important;
+.card *, .box *, .panel * {
+    color: #1A1A1A !important;
 }
 
-/* --- ④ KV（キービジュアル）のコピーは紺で視認性確保 --- */
+/* --- ④ KV（キービジュアル）のコピーは白で映えさせる --- */
 .kv .copy, .copy-char {
-    color: #192F61 !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
 }
 
-/* --- ⑤ ナビゲーション（白背景）は紺文字 --- */
+/* --- ⑤ ナビ（紺背景）は白文字 --- */
 .nav-global a, .nav-global span,
-.header .site-name {
-    color: #192F61 !important;
+.header .site-name, .header .site-name a {
+    color: #FFFFFF !important;
 }
 
-/* --- ⑥ フッター（暗い背景想定）は白文字 --- */
+/* --- ⑥ フッター（紺背景）は白文字 --- */
 .footer, footer {
-    background-color: #192F61 !important;
+    background-color: #0F1F45 !important;
     color: #FFFFFF !important;
 }
 .footer *, footer * {
