@@ -1327,3 +1327,69 @@ html, body {
     .member-circle { width: 200px !important; height: 200px !important; }
     .member-detail { max-width: 400px; margin: 0 auto; }
 }
+
+
+/* ============================================================
+   代表メッセージ（写真左・コメント右）
+   ============================================================ */
+.message-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+.message-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.message-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.message-layout .message-content {
+    text-align: left;
+}
+.message-layout .message-catch {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.message-layout .message-body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+.message-layout .message-signature {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+.message-layout .message-signature .role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.message-layout .message-signature .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* タブレット・スマホ（縦積み） */
+@media (max-width: 900px) {
+    .message-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .message-photo {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .message-layout .message-catch { font-size: 1.3rem; }
+}
